@@ -25,7 +25,7 @@
 
 
 
-  <link rel="stylesheet" href="runtime/game.f4f6a9cbe529.min.css">
+  <link rel="stylesheet" href="runtime/game.7fa272d44ee3.min.css">
 </head>
 <body data-scene="menu">
   <section id="viewport-gate" class="viewport-gate" role="dialog" aria-modal="true" aria-labelledby="viewport-title" aria-describedby="viewport-message" tabindex="-1" hidden>
@@ -105,7 +105,12 @@
       <p>Viaje, invista e transforme cidades em um império. Cada parada é uma nova oportunidade.</p>
       <button id="multiplayer-solo" class="btn primary lobby-play" type="button"><span class="hud-icon icon-dice" aria-hidden="true"></span><span class="lobby-button-copy">Jogar com BOT<small>Escolha seu personagem</small></span><span class="button-arrow" aria-hidden="true">›</span></button>
       <div class="lobby-divider"><span>OU JOGUE COM AMIGOS</span></div>
-      <button id="multiplayer-create" class="btn multiplayer-secondary" type="button">Criar Sala</button>
+      <div id="multiplayer-create-controls" class="multiplayer-create-controls">
+        <label for="match-duration-minutes">Duração (min)
+          <input id="match-duration-minutes" type="number" min="30" max="99" step="1" value="30" inputmode="numeric" title="Duração da partida: de 30 a 99 minutos">
+        </label>
+        <button id="multiplayer-create" class="btn multiplayer-secondary" type="button">Criar Sala</button>
+      </div>
       <form id="multiplayer-join" novalidate>
         <label for="room-code">Código da sala</label>
         <div class="multiplayer-actions">
@@ -128,7 +133,7 @@
               <button id="multiplayer-copy" class="btn" type="button">Copiar</button>
             </div>
           </div>
-          <p class="ui-eyebrow" id="waiting-players-label">JOGADORES NA SALA</p>
+          <p class="ui-eyebrow" id="waiting-players-label">JOGADORES NA SALA <span id="waiting-duration">· 30 MIN</span></p>
           <ol id="waiting-players" class="waiting-players" aria-labelledby="waiting-players-label"></ol>
           <p id="waiting-hint" class="waiting-hint">Aguardando jogadores.</p>
         </div>
@@ -179,6 +184,6 @@
 
 
 
-  <script src="runtime/game.983493acc613.min.js"></script>
+  <script src="runtime/game.227f5abd3a18.min.js"></script>
 </body>
 </html>
