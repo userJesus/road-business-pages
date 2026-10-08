@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Road Business</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
+  
+  
+  <link rel="stylesheet" href="runtime/game.e11950299db5.min.css">
+</head>
+<body>
+  <main class="stage" id="stage">
+    <div class="hotspots" id="hotspots"></div>
+    <div class="player-controls" aria-label="Seu personagem">
+      <label for="player-character">Personagem</label>
+      <div class="player-character-choice">
+        <img id="player-portrait" width="38" height="48" alt="" aria-hidden="true">
+        <select id="player-character" aria-label="Escolher personagem"></select>
+      </div>
+      <span>Cor da roupa</span>
+      <div id="player-colors" class="player-colors" role="group" aria-label="Escolher cor da roupa"></div>
+    </div>
+    <p class="help">Cidade = terreno → casa 1 → casa 2 → casa 3 → hotel · praia = resort 1 → 2 → 3 → 4 · botão direito = volta · + = imagens · H esconde os botões</p>
+    <div class="dice-controls" aria-label="Dados">
+      <button class="btn primary" id="roll-dice" type="button" title="Rolar dados (Espaço)">Rolar dados</button>
+      <output id="dice-result" aria-live="polite">Pronto para rolar</output>
+      <button class="btn dice-sound" id="dice-sound" type="button" aria-pressed="true" aria-label="Desativar som dos dados">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="sound-waves" d="M16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/><path class="sound-off" d="m17 9 5 6m0-6-5 6"/></svg>
+      </button>
+    </div>
+  </main>
+
+  <div class="pop" id="pop" role="dialog" aria-label="Imagens da parte selecionada" hidden></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <input type="file" id="file" accept="image/*" hidden>
+
+  <button id="multiplayer-toggle" class="multiplayer-toggle" type="button" aria-controls="multiplayer-panel" aria-expanded="true" hidden>Multiplayer</button>
+  <section id="multiplayer-panel" class="multiplayer-panel" aria-labelledby="multiplayer-title" data-state="HOME">
+    <h1 id="multiplayer-title">Multiplayer</h1>
+    <div id="multiplayer-home">
+      <p>Convide alguém para jogar com você.</p>
+      <button id="multiplayer-create" class="btn primary" type="button">Criar Sala</button>
+      <form id="multiplayer-join" novalidate>
+        <label for="room-code">Código da sala</label>
+        <div class="multiplayer-actions">
+          <input id="room-code" type="text" maxlength="6" placeholder="K7F2P9" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-describedby="multiplayer-status">
+          <button class="btn primary" type="submit">Entrar em Sala</button>
+        </div>
+      </form>
+      <button id="multiplayer-solo" class="btn multiplayer-secondary" type="button">Jogar sozinho</button>
+    </div>
+    <div id="multiplayer-room" hidden>
+      <span class="multiplayer-room-label">Sala</span>
+      <div class="multiplayer-room-code">
+        <output id="multiplayer-code"></output>
+        <button id="multiplayer-copy" class="btn" type="button">Copiar</button>
+      </div>
+    </div>
+    <p id="multiplayer-status" role="status" aria-live="polite"></p>
+    <p id="multiplayer-network" hidden>Reconectando ao PeerServer. Novas entradas aguardam a conexão.</p>
+    <div id="multiplayer-requests" aria-label="Solicitações de entrada" hidden></div>
+    <button id="multiplayer-start" class="btn primary" type="button" hidden>Iniciar partida</button>
+    <button id="multiplayer-minimize" class="btn multiplayer-secondary" type="button" hidden>Voltar ao tabuleiro</button>
+    <button id="multiplayer-leave" class="btn multiplayer-secondary" type="button" hidden>Sair da sala</button>
+  </section>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="runtime/game.0b458d05dcf4.min.js"></script>
+</body>
+</html>
