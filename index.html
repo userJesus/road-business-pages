@@ -11,42 +11,83 @@
 
 
 
-  <link rel="stylesheet" href="runtime/game.66112fb3f3f1.min.css">
+
+
+
+
+
+
+  <link rel="stylesheet" href="runtime/game.30ee9dd6febd.min.css">
 </head>
-<body>
+<body data-scene="menu">
+  <div class="menu-backdrop" aria-hidden="true"></div>
+  <header class="game-header">
+    <a class="game-brand" href="#" aria-label="Road Business, início"><span class="hud-icon icon-gem" aria-hidden="true"></span><span>ROAD<strong>BUSINESS</strong></span></a>
+    <div class="table-label"><span class="live-dot"></span><span id="table-mode">SEU PRÓXIMO DESTINO</span><small>Mesa clássica · Volta ao mundo</small></div>
+    <nav class="header-actions" aria-label="Menu do jogo">
+      <button id="profile-toggle" class="ui-icon-button" type="button" aria-label="Personalizar personagem" aria-controls="player-profile" aria-expanded="false" hidden><span class="hud-icon icon-gem" aria-hidden="true"></span></button>
+      <button id="how-to-play" class="ui-icon-button" type="button" aria-label="Como jogar"><span class="hud-icon icon-book" aria-hidden="true"></span></button>
+      <button class="ui-icon-button dice-sound" id="dice-sound" type="button" aria-pressed="true" aria-label="Desativar som dos dados"><span class="hud-icon icon-sound" aria-hidden="true"></span></button>
+      <button id="multiplayer-toggle" class="ui-icon-button multiplayer-toggle" type="button" aria-label="Menu da partida" aria-controls="multiplayer-panel" aria-expanded="true"><span class="hud-icon icon-menu" aria-hidden="true"></span></button>
+    </nav>
+  </header>
   <main class="stage" id="stage">
-    <div class="player-controls" aria-label="Seu personagem">
-      <label for="player-character">Personagem</label>
-      <div class="player-character-choice">
-        <img id="player-portrait" width="38" height="48" alt="" aria-hidden="true">
-        <select id="player-character" aria-label="Escolher personagem"></select>
-      </div>
-      <span>Cor da roupa</span>
-      <div id="player-colors" class="player-colors" role="group" aria-label="Escolher cor da roupa"></div>
+    <div class="player-controls" id="player-profile" aria-label="Seu personagem">
+      <div class="profile-heading"><span class="ui-eyebrow">SUA IDENTIDADE</span><button id="profile-close" class="ui-icon-button" type="button" aria-label="Fechar personalização"><span class="hud-icon icon-close" aria-hidden="true"></span></button></div>
+      <section id="character-roulette" class="character-roulette" aria-label="Roleta de personagens" aria-roledescription="carrossel" tabindex="0">
+        <div class="roulette-stage">
+          <button id="character-previous" class="btn roulette-arrow" type="button" aria-label="Personagem anterior">‹</button>
+          <div class="roulette-portrait"><img id="waiting-portrait" alt="Personagem selecionado"></div>
+          <button id="character-next" class="btn roulette-arrow" type="button" aria-label="Próximo personagem">›</button>
+        </div>
+        <output id="player-character" class="roulette-name" aria-live="polite"></output>
+        <div id="character-options" class="character-options" role="group" aria-label="Selecionar personagem"></div>
+        <img id="player-portrait" alt="" aria-hidden="true" hidden>
+      </section>
+      <span>Cor do jogador</span>
+      <div id="player-colors" class="player-colors" role="group" aria-label="Escolher cor do jogador"></div>
     </div>
-    <p class="help">Clique nas cidades para construir · botão direito reduz a construção · Espaço rola os dados na sua vez</p>
+    <p class="help">Um mundo de oportunidades. Seu império começa aqui.</p>
     <section id="multiplayer-turn" class="multiplayer-turn" aria-label="Jogadores e turno" hidden>
       <p id="multiplayer-turn-status" role="status" aria-live="polite"></p>
+      <p class="players-caption">NA MESA <span id="player-count">2 jogadores</span></p>
       <p id="multiplayer-first-player" class="multiplayer-first-player" hidden></p>
       <ol id="multiplayer-players"></ol>
     </section>
+    <aside class="table-tools" id="table-tools" aria-label="Ferramentas da mesa" hidden>
+      <button id="portfolio-toggle" class="portfolio-toggle" type="button" aria-label="Meus imóveis" aria-controls="portfolio-panel" aria-expanded="false"><span class="hud-icon icon-house" aria-hidden="true"></span><span class="tool-label">Imóveis</span><span id="portfolio-count">0</span></button>
+      <button id="history-toggle" type="button" aria-label="Histórico da partida" aria-controls="game-sidebar" aria-expanded="false"><span class="hud-icon icon-book" aria-hidden="true"></span><span class="tool-label">Histórico</span></button>
+    </aside>
+    <aside class="game-sidebar" id="game-sidebar" aria-label="Informações da partida" hidden>
+      <section class="ui-card board-guide" id="board-guide">
+        <span class="ui-eyebrow">EXPLORE O TABULEIRO</span>
+        <h2>Qual será seu próximo negócio?</h2><p>Selecione uma cidade para consultar preço, aluguel e proprietário.</p>
+        <div class="board-legend"><span><i class="legend-dot available"></i>Disponível</span><span><i class="legend-dot owned"></i>Com proprietário</span><span><i class="legend-dot festival"></i>Festival ×2</span></div>
+      </section>
+      <section class="ui-card activity-card"><div class="card-heading"><span class="ui-eyebrow">ACONTECEU NA MESA</span><span class="activity-live">AO VIVO</span></div><ol id="activity-feed" aria-label="Histórico da partida"></ol></section>
+    </aside>
+    <section id="property-inspector" class="ui-card property-inspector" aria-label="Detalhes da casa" hidden></section>
+    <section id="portfolio-panel" class="ui-card portfolio-panel" aria-label="Meus imóveis" hidden></section>
     <div class="dice-controls" aria-label="Dados">
-      <button class="btn primary" id="roll-dice" type="button" title="Rolar dados (Espaço)">Rolar dados</button>
-      <output id="dice-result" aria-live="polite">Pronto para rolar</output>
-      <button class="btn dice-sound" id="dice-sound" type="button" aria-pressed="true" aria-label="Desativar som dos dados">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="sound-waves" d="M16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/><path class="sound-off" d="m17 9 5 6m0-6-5 6"/></svg>
-      </button>
+      <div class="turn-copy"><span id="turn-eyebrow" class="ui-eyebrow">CONSTRUA SEU CAMINHO</span><h2 id="turn-title">Escolha como jogar</h2><p id="turn-description">Comece contra o BOT ou convide seus amigos.</p></div>
+      <ol class="turn-steps" aria-label="Etapas do turno"><li data-step="ready"><span>1</span>Rolar</li><li data-step="moving"><span>2</span>Mover</li><li data-step="decision"><span>3</span>Decidir</li></ol>
+      <div class="roll-action">
+      <button class="btn primary" id="roll-dice" type="button" title="Rolar dados">Rolar dados</button>
+      <div class="roll-detail"><output id="dice-result" aria-live="polite">Pronto para rolar</output><span id="roll-timer" class="roll-timer" role="timer" hidden></span></div>
+      </div>
     </div>
   </main>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <button id="multiplayer-toggle" class="multiplayer-toggle" type="button" aria-controls="multiplayer-panel" aria-expanded="true" hidden>Multiplayer</button>
   <section id="multiplayer-panel" class="multiplayer-panel" aria-labelledby="multiplayer-title" data-state="HOME">
-    <h1 id="multiplayer-title">Multiplayer</h1>
+    <span class="ui-eyebrow lobby-eyebrow" id="menu-eyebrow">NOVA PARTIDA</span>
+    <h1 id="multiplayer-title">Seu próximo<br>grande negócio.</h1>
     <div id="multiplayer-home">
-      <p>Convide alguém para jogar com você.</p>
-      <button id="multiplayer-create" class="btn primary" type="button">Criar Sala</button>
+      <p>Viaje, invista e transforme cidades em um império. Cada parada é uma nova oportunidade.</p>
+      <button id="multiplayer-solo" class="btn primary lobby-play" type="button"><span class="hud-icon icon-dice" aria-hidden="true"></span><span class="lobby-button-copy">Jogar com BOT<small>Escolha seu personagem</small></span><span class="button-arrow" aria-hidden="true">›</span></button>
+      <div class="lobby-divider"><span>OU JOGUE COM AMIGOS</span></div>
+      <button id="multiplayer-create" class="btn multiplayer-secondary" type="button">Criar Sala</button>
       <form id="multiplayer-join" novalidate>
         <label for="room-code">Código da sala</label>
         <div class="multiplayer-actions">
@@ -54,22 +95,41 @@
           <button class="btn primary" type="submit">Entrar em Sala</button>
         </div>
       </form>
-      <button id="multiplayer-solo" class="btn multiplayer-secondary" type="button">Jogar sozinho</button>
     </div>
-    <div id="multiplayer-room" hidden>
-      <span class="multiplayer-room-label">Sala</span>
-      <div class="multiplayer-room-code">
-        <output id="multiplayer-code"></output>
-        <button id="multiplayer-copy" class="btn" type="button">Copiar</button>
+    <section id="waiting-room" class="waiting-room" aria-label="Escolha de personagem e sala de espera" hidden>
+      <p class="waiting-intro" id="waiting-intro">Escolha seu personagem e sua cor antes de entrar no tabuleiro.</p>
+      <div class="waiting-grid">
+        <div class="waiting-character">
+          <div id="profile-mount"></div>
+        </div>
+        <div class="waiting-table">
+          <div id="multiplayer-room" hidden>
+            <span class="multiplayer-room-label">CÓDIGO DA SALA</span>
+            <div class="multiplayer-room-code">
+              <output id="multiplayer-code"></output>
+              <button id="multiplayer-copy" class="btn" type="button">Copiar</button>
+            </div>
+          </div>
+          <p class="ui-eyebrow" id="waiting-players-label">JOGADORES NA SALA</p>
+          <ol id="waiting-players" class="waiting-players" aria-labelledby="waiting-players-label"></ol>
+          <p id="waiting-hint" class="waiting-hint">Aguardando jogadores.</p>
+        </div>
       </div>
-    </div>
+    </section>
     <p id="multiplayer-status" role="status" aria-live="polite"></p>
     <p id="multiplayer-network" hidden>Reconectando ao PeerServer. Novas entradas aguardam a conexão.</p>
     <div id="multiplayer-requests" aria-label="Solicitações de entrada" hidden></div>
     <button id="multiplayer-start" class="btn primary" type="button" hidden>Iniciar partida</button>
+    <button id="waiting-back" class="btn multiplayer-secondary" type="button" hidden>Voltar ao menu</button>
     <button id="multiplayer-minimize" class="btn multiplayer-secondary" type="button" hidden>Voltar ao tabuleiro</button>
     <button id="multiplayer-leave" class="btn multiplayer-secondary" type="button" hidden>Sair da sala</button>
   </section>
+  <dialog id="how-to-dialog" class="how-to-dialog" aria-labelledby="how-to-title">
+    <button class="ui-icon-button dialog-close" id="how-to-close" type="button" aria-label="Fechar como jogar"><span class="hud-icon icon-close" aria-hidden="true"></span></button>
+    <span class="ui-eyebrow">SEU PRIMEIRO NEGÓCIO</span><h2 id="how-to-title">Do primeiro passo<br>ao seu império.</h2><p>O objetivo é ser o último jogador com dinheiro na mesa.</p>
+    <ol class="how-to-steps"><li><span>01</span><div><h3>Role e viaje</h3><p>Você tem 10 segundos para rolar; depois disso, a vez passa ao próximo jogador. Seu personagem anda a soma das faces. Duplas dão outra jogada.</p></div></li><li><span>02</span><div><h3>Invista na sua parada</h3><p>Compre uma cidade livre ou evolua um imóvel seu. Compare o custo, o aluguel e o saldo que vai sobrar. Você tem 10 segundos para decidir.</p></div></li><li><span>03</span><div><h3>Receba e acompanhe</h3><p>O aluguel é pago automaticamente. A cor das construções mostra quem é o dono. Consulte qualquer cidade clicando nela.</p></div></li><li><span>04</span><div><h3>Cuide do seu caixa</h3><p>Cada volta rende R$ 300.000. Se faltar dinheiro para uma dívida, venda imóveis por 70% do valor. Festivais dobram compra e aluguel.</p></div></li></ol>
+    <button id="how-to-done" class="btn primary" type="button">Entendi, vamos jogar</button>
+  </dialog>
 
 
 
@@ -93,6 +153,13 @@
 
 
 
-  <script src="runtime/game.83a1051c2e0a.min.js"></script>
+
+
+
+
+
+
+
+  <script src="runtime/game.1f85ab55c3dd.min.js"></script>
 </body>
 </html>
