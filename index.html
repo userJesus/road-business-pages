@@ -2,7 +2,13 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-visual">
+  <meta name="theme-color" content="#203f3d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/app/icon-192.e573394d9545.png">
   <title>Road Business</title>
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,14 +23,26 @@
 
 
 
-  <link rel="stylesheet" href="runtime/game.30ee9dd6febd.min.css">
+
+
+  <link rel="stylesheet" href="runtime/game.f4f6a9cbe529.min.css">
 </head>
 <body data-scene="menu">
+  <section id="viewport-gate" class="viewport-gate" role="dialog" aria-modal="true" aria-labelledby="viewport-title" aria-describedby="viewport-message" tabindex="-1" hidden>
+    <div class="viewport-card">
+      <span class="viewport-device" aria-hidden="true">↻</span>
+      <h1 id="viewport-title">Jogue na horizontal</h1>
+      <p id="viewport-message">Gire seu dispositivo e entre em tela cheia para começar.</p>
+      <button id="viewport-enter" class="btn primary" type="button">Entrar em tela cheia</button>
+      <p id="viewport-install" hidden>No navegador, abra Compartilhar ou o menu e escolha Adicionar à Tela de Início. Depois abra Road Business pelo ícone e gire o dispositivo.</p>
+    </div>
+  </section>
   <div class="menu-backdrop" aria-hidden="true"></div>
   <header class="game-header">
     <a class="game-brand" href="#" aria-label="Road Business, início"><span class="hud-icon icon-gem" aria-hidden="true"></span><span>ROAD<strong>BUSINESS</strong></span></a>
     <div class="table-label"><span class="live-dot"></span><span id="table-mode">SEU PRÓXIMO DESTINO</span><small>Mesa clássica · Volta ao mundo</small></div>
     <nav class="header-actions" aria-label="Menu do jogo">
+      <button id="fullscreen-toggle" class="ui-icon-button" type="button" aria-label="Entrar em tela cheia" title="Tela cheia"><span aria-hidden="true">⛶</span></button>
       <button id="profile-toggle" class="ui-icon-button" type="button" aria-label="Personalizar personagem" aria-controls="player-profile" aria-expanded="false" hidden><span class="hud-icon icon-gem" aria-hidden="true"></span></button>
       <button id="how-to-play" class="ui-icon-button" type="button" aria-label="Como jogar"><span class="hud-icon icon-book" aria-hidden="true"></span></button>
       <button class="ui-icon-button dice-sound" id="dice-sound" type="button" aria-pressed="true" aria-label="Desativar som dos dados"><span class="hud-icon icon-sound" aria-hidden="true"></span></button>
@@ -160,6 +178,7 @@
 
 
 
-  <script src="runtime/game.1f85ab55c3dd.min.js"></script>
+
+  <script src="runtime/game.983493acc613.min.js"></script>
 </body>
 </html>
