@@ -28,7 +28,7 @@
 
 
 
-  <link rel="stylesheet" href="runtime/game.da74fe814fbb.min.css">
+  <link rel="stylesheet" href="runtime/game.ba7547f3206d.min.css">
 </head>
 <body data-scene="menu">
   <section id="viewport-gate" class="viewport-gate" role="dialog" aria-modal="true" aria-labelledby="viewport-title" aria-describedby="viewport-message" tabindex="-1" hidden>
@@ -54,8 +54,8 @@
     <a class="game-brand" href="#" aria-label="Road Business, início"><span class="hud-icon icon-gem" aria-hidden="true"></span><span>ROAD<strong>BUSINESS</strong></span></a>
     <div class="table-label"><span class="live-dot"></span><span id="table-mode">SEU PRÓXIMO DESTINO</span><small>Mesa clássica · Volta ao mundo</small></div>
     <nav class="header-actions" aria-label="Menu do jogo">
-      <a id="support-game" class="ui-icon-button support-link support-game" href="https://buymeacoffee.com/ojesus" target="_blank" rel="noopener noreferrer" aria-label="Apoie o projeto no Buy Me a Coffee (abre em outra aba)" title="Compre um café · Apoie o projeto (outra aba)"><span class="support-coffee-icon" aria-hidden="true"></span></a>
-      <button id="fullscreen-toggle" class="ui-icon-button" type="button" aria-label="Entrar em tela cheia" title="Tela cheia"><span aria-hidden="true">⛶</span></button>
+      <a id="support-game" class="ui-icon-button support-link support-game" href="https://buymeacoffee.com/ojesus" target="_blank" rel="noopener noreferrer" aria-label="Apoie o projeto no Buy Me a Coffee (abre em outra aba)"><span class="support-coffee-icon" aria-hidden="true"></span></a>
+      <button id="fullscreen-toggle" class="ui-icon-button" type="button" aria-label="Entrar em tela cheia"><span aria-hidden="true">⛶</span></button>
       <button id="profile-toggle" class="ui-icon-button" type="button" aria-label="Personalizar personagem" aria-controls="player-profile" aria-expanded="false" hidden><span class="hud-icon icon-gem" aria-hidden="true"></span></button>
       <button id="how-to-play" class="ui-icon-button" type="button" aria-label="Como jogar"><span class="hud-icon icon-book" aria-hidden="true"></span></button>
       <button class="ui-icon-button dice-sound" id="dice-sound" type="button" aria-pressed="true" aria-label="Silenciar música ambiente"><span class="hud-icon icon-sound" aria-hidden="true"></span></button>
@@ -103,7 +103,7 @@
       <div class="turn-copy"><span id="turn-eyebrow" class="ui-eyebrow">CONSTRUA SEU CAMINHO</span><h2 id="turn-title">Escolha como jogar</h2><p id="turn-description">Comece contra o BOT ou convide seus amigos.</p></div>
       <ol class="turn-steps" aria-label="Etapas do turno"><li data-step="ready"><span>1</span>Rolar</li><li data-step="moving"><span>2</span>Mover</li><li data-step="decision"><span>3</span>Decidir</li></ol>
       <div class="roll-action">
-      <button class="btn primary" id="roll-dice" type="button" title="Rolar dados">Rolar dados</button>
+      <button class="btn primary" id="roll-dice" type="button">Rolar dados</button>
       <div class="roll-detail"><output id="dice-result" aria-live="polite">Pronto para rolar</output><span id="roll-timer" class="roll-timer" role="timer" hidden></span></div>
       </div>
     </div>
@@ -120,7 +120,7 @@
       <div class="lobby-divider"><span>OU JOGUE COM AMIGOS</span></div>
       <div id="multiplayer-create-controls" class="multiplayer-create-controls">
         <label for="match-duration-minutes">Duração (min)
-          <input id="match-duration-minutes" type="number" min="30" max="99" step="1" value="30" inputmode="numeric" title="Duração da partida: de 30 a 99 minutos">
+          <input id="match-duration-minutes" type="number" min="30" max="99" step="1" value="30" inputmode="numeric" aria-label="Duração da partida: de 30 a 99 minutos">
         </label>
         <button id="multiplayer-create" class="btn multiplayer-secondary" type="button">Criar Sala</button>
       </div>
@@ -200,6 +200,7 @@
 
 
 
-  <script src="runtime/game.ef16767fff42.min.js"></script>
+
+  <script src="runtime/game.a84a21c7c56a.min.js"></script>
 </body>
 </html>
