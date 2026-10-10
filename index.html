@@ -18,7 +18,6 @@
     #asset-loading-status { margin: 0 0 15px; font-size: 14px; line-height: 1.5; color: #547266; }
     #asset-loading-progress { height: 9px; border-radius: 9px; overflow: hidden; background: #bfd1bf; box-shadow: inset 0 1px 2px #234d4520; }
     #asset-loading-progress span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #d5a137, #ffdb77); transition: width .18s ease; }
-    #asset-loading-percent { display: block; margin-top: 10px; color: #547266; font-size: 12px; font-weight: 700; }
     #asset-loading-retry { margin-top: 12px; padding: 12px 22px; border: 0; border-radius: 9px; background: #e8b43f; color: #234d45; cursor: pointer; font: 700 14px system-ui, sans-serif; }
     #asset-loading-retry:focus-visible { outline: 3px solid #d69d36; outline-offset: 4px; }
     @media (prefers-reduced-motion: reduce) { #asset-loading-progress span { transition: none; } }
@@ -34,7 +33,8 @@
         document.documentElement.dataset.loading = 'failed';
         document.getElementById('asset-loading').setAttribute('aria-busy', 'false');
         document.getElementById('asset-loading-status').textContent = 'Não foi possível carregar o jogo. Confira sua conexão e tente novamente.';
-        document.getElementById('asset-loading-progress').hidden = document.getElementById('asset-loading-percent').hidden = true;
+        document.getElementById('asset-loading-status').hidden = false;
+        document.getElementById('asset-loading-progress').hidden = true;
         document.getElementById('asset-loading-retry').hidden = false;
       }
       if (document.getElementById('asset-loading')) show(); else document.addEventListener('DOMContentLoaded', show, { once: true });
@@ -63,15 +63,14 @@
 
 
 
-  <link rel="stylesheet" href="runtime/game.e8a12953fbf2.min.css">
+  <link rel="stylesheet" href="runtime/game.0c141f343b83.min.css">
 </head>
 <body data-scene="menu">
   <section id="asset-loading" aria-label="Carregamento do jogo" aria-busy="true">
     <div class="asset-loading-card">
       <img class="asset-loading-logo" src="assets/branding/capitalist-logo-v1.37c1331f5ab8.webp" alt="CAPITALIST" width="2160" height="728" fetchpriority="high">
-      <p id="asset-loading-status" role="status" aria-live="polite">Preparando sua cidade…</p>
+      <p id="asset-loading-status" role="status" aria-live="polite" hidden></p>
       <div id="asset-loading-progress" role="progressbar" aria-label="Carregamento dos elementos do jogo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
-      <output id="asset-loading-percent" aria-hidden="true">0%</output>
       <button id="asset-loading-retry" type="button" hidden>Tentar novamente</button>
     </div>
   </section>
@@ -155,10 +154,9 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <section id="multiplayer-panel" class="multiplayer-panel" aria-labelledby="multiplayer-title" data-state="HOME">
-    <span class="ui-eyebrow lobby-eyebrow" id="menu-eyebrow">NOVA PARTIDA</span>
-    <h1 id="multiplayer-title">Seu próximo<br>grande negócio.</h1>
+    <span class="ui-eyebrow lobby-eyebrow" id="menu-eyebrow" hidden></span>
+    <h1 id="multiplayer-title">Nova partida</h1>
     <div id="multiplayer-home">
-      <p>Viaje, invista e transforme estados em um império. Cada parada é uma nova oportunidade.</p>
       <button id="multiplayer-solo" class="btn primary lobby-play" type="button"><span class="hud-icon icon-dice" aria-hidden="true"></span><span class="lobby-button-copy">Jogar com BOT<small>Escolha seu personagem</small></span><span class="button-arrow" aria-hidden="true">›</span></button>
       <div class="lobby-divider"><span>OU JOGUE COM AMIGOS</span></div>
       <div id="multiplayer-create-controls" class="multiplayer-create-controls">
@@ -245,6 +243,6 @@
 
 
 
-  <script src="runtime/game.3567de6d9f5e.min.js"></script>
+  <script src="runtime/game.58ce4003adb8.min.js"></script>
 </body>
 </html>
