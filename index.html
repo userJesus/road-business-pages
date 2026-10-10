@@ -26,7 +26,7 @@
   <link rel="apple-touch-icon" href="assets/app/icon-192.8b2f9c79cd4e.png">
   <link rel="preload" href="assets/landing/fonts/lilita-one-latin.d2575d4fa363.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/landing/fonts/nunito-latin.ba344451eab2.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="runtime/landing.7ad473536562.min.css">
+  <link rel="stylesheet" href="runtime/landing.9811f213e0fd.min.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,7 +39,7 @@
         "@type": "VideoGame", "@id": "https://userjesus.github.io/road-business-pages/#game",
         "name": "CAPITALIST", "url": "https://userjesus.github.io/road-business-pages/jogar/",
         "description": "Jogo de tabuleiro online grátis de estratégia, compra de propriedades e construção de imóveis, com multiplayer para 2 a 4 jogadores ou partida local contra o BOT.",
-        "image": "https://userjesus.github.io/road-business-pages/assets/landing/gameplay-poster-v1.7b9cb06b4f76.webp",
+        "image": "https://userjesus.github.io/road-business-pages/assets/landing/gameplay-poster-v2.694442660ca5.webp",
         "genre": ["Jogo de tabuleiro", "Estratégia", "Gestão de propriedades"],
         "gamePlatform": "Navegador web", "applicationCategory": "GameApplication",
         "operatingSystem": "Web", "inLanguage": ["pt-BR", "en"], "isAccessibleForFree": true,
@@ -51,8 +51,8 @@
         "@type": "VideoObject", "@id": "https://userjesus.github.io/road-business-pages/#gameplay",
         "name": "CAPITALIST — Gameplay real contra o BOT",
         "description": "Trecho de uma partida real de CAPITALIST, com dados, compra de propriedades e decisões no tabuleiro.",
-        "thumbnailUrl": "https://userjesus.github.io/road-business-pages/assets/landing/gameplay-poster-v1.7b9cb06b4f76.webp",
-        "contentUrl": "https://userjesus.github.io/road-business-pages/assets/landing/capitalist-gameplay-v1.34ac836cde80.mp4",
+        "thumbnailUrl": "https://userjesus.github.io/road-business-pages/assets/landing/gameplay-poster-v2.694442660ca5.webp",
+        "contentUrl": "https://userjesus.github.io/road-business-pages/assets/landing/capitalist-gameplay-v2.87236b106eec.mp4",
         "uploadDate": "2026-10-10", "duration": "PT35S", "inLanguage": "pt-BR"
       }
     ]
@@ -65,11 +65,15 @@
     <div class="header-inner wrap">
       <a class="brand" href="#inicio" aria-label="CAPITALIST — início"><img src="assets/landing/capitalist-logo-v1.458e7b90750d.webp" alt="CAPITALIST" width="600" height="202"></a>
       <nav class="desktop-nav" aria-label="Navegação principal"><a href="#gameplay">O jogo</a><a href="#como-jogar">Como jogar</a><a href="#personagens">Personagens</a><a href="#perguntas">Perguntas</a></nav>
-      <a class="button button-small" href="jogar/">Jogar grátis</a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav" hidden><span></span><span></span></button>
+      <div class="header-actions">
+        <button id="landing-sound" class="ambient-toggle" type="button" aria-label="Silenciar som ambiente" aria-pressed="true" title="Silenciar som ambiente" hidden></button>
+        <a class="button button-small" href="jogar/">Jogar grátis</a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav" hidden><span></span><span></span></button>
+      </div>
     </div>
     <nav id="mobile-nav" class="mobile-nav" aria-label="Navegação móvel" hidden><a href="#gameplay">O jogo</a><a href="#como-jogar">Como jogar</a><a href="#personagens">Personagens</a><a href="#perguntas">Perguntas</a></nav>
   </header>
+  <audio id="landing-ambience" src="assets/audio/ambience.58df57c93cfe.mp3" loop preload="none" aria-hidden="true"></audio>
   <main id="conteudo" tabindex="-1">
     <section id="inicio" class="hero" aria-labelledby="hero-title">
       <picture class="hero-art"><source media="(max-width: 700px)" srcset="assets/landing/capitalist-hero-landscape-mobile-v2.788f38e94c53.webp"><img src="assets/landing/capitalist-hero-landscape-v2.70cc3888b4ba.webp" alt="" width="1672" height="941" fetchpriority="high"></picture>
@@ -88,11 +92,11 @@
       <div class="wrap">
         <div class="section-heading"><p class="eyebrow">Bem-vindo ao seu próximo tabuleiro</p><h2 id="gameplay-title">Um pouco de sorte.<br><em>Muita estratégia.</em></h2><p>Compre estados, construa seu império e faça cada visita render.<br> Um jogo de tabuleiro online com a cara do Brasil.</p></div>
         <figure class="gameplay-figure"><div class="video-shell">
-          <video id="gameplay-video" controls playsinline preload="none" poster="assets/landing/gameplay-poster-v1.7b9cb06b4f76.webp" width="1280" height="720" aria-label="Gameplay do CAPITALIST: partida real contra o BOT">
-              <source src="assets/landing/capitalist-gameplay-v1.90e747e5e3e3.webm" type="video/webm">
-              <source src="assets/landing/capitalist-gameplay-v1.34ac836cde80.mp4" type="video/mp4">
+          <video id="gameplay-video" controls playsinline preload="none" poster="assets/landing/gameplay-poster-v2.694442660ca5.webp" width="1280" height="720" aria-label="Gameplay do CAPITALIST: partida real contra o BOT com áudio do jogo">
+              <source src="assets/landing/capitalist-gameplay-v2.3564bb53a33c.webm" type="video/webm">
+              <source src="assets/landing/capitalist-gameplay-v2.87236b106eec.mp4" type="video/mp4">
               <track kind="captions" src="assets/landing/gameplay-pt-BR.606ddc8f8637.vtt" srclang="pt-BR" label="Português">
-              Seu navegador não reproduz este vídeo. <a href="assets/landing/capitalist-gameplay-v1.90e747e5e3e3.webm">Assistir ao gameplay</a>.
+              Seu navegador não reproduz este vídeo. <a href="assets/landing/capitalist-gameplay-v2.3564bb53a33c.webm">Assistir ao gameplay</a>.
             </video>
           <img class="gameplay-frame" src="assets/landing/capitalist-gameplay-frame-v2.fc134c799fb9.webp" alt="" width="1664" height="936" loading="lazy">
           <span class="frame-label" aria-hidden="true">O JOGO EM AÇÃO</span>
@@ -154,6 +158,6 @@
     </section>
   </main>
   <footer class="site-footer"><div class="wrap footer-inner"><a class="brand" href="#inicio" aria-label="CAPITALIST — voltar ao início"><img src="assets/landing/capitalist-logo-v1.458e7b90750d.webp" alt="CAPITALIST" width="600" height="202" loading="lazy"></a><p>Um jogo de tabuleiro online feito para boas disputas.<br><span>© 2026 CAPITALIST</span></p><a href="https://buymeacoffee.com/ojesus" target="_blank" rel="noopener noreferrer">me pague um café <span aria-hidden="true">↗</span></a></div></footer>
-  <script src="runtime/landing.0506590bc417.min.js" defer></script>
+  <script src="runtime/landing.c820107b6d7f.min.js" defer></script>
 </body>
 </html>
