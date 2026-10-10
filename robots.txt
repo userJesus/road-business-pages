@@ -1,3 +1,4 @@
+# Esta configuração só é efetiva em /robots.txt na raiz do domínio.
 User-agent: *
 Allow: /
 
