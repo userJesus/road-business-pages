@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://userjesus.github.io/road-business-pages/sitemap.xml
