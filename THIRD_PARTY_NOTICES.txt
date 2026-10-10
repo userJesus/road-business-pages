@@ -1,4 +1,4 @@
-Road Business — avisos de bibliotecas de terceiros.
+CAPITALIST — avisos de bibliotecas de terceiros.
 O código e as artes do jogo não recebem a licença destas bibliotecas.
 
 Three.js

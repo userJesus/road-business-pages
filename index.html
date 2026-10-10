@@ -6,26 +6,23 @@
   <meta name="theme-color" content="#203f3d">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Road Business">
+  <meta name="apple-mobile-web-app-title" content="CAPITALIST">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <style id="asset-loading-style">
-    html[data-loading] { background: #d9edfa; }
+    html[data-loading] { background: #e4eddf; }
     html[data-loading] body > :not(#asset-loading), html[data-loading] body > :not(#asset-loading) * { visibility: hidden !important; pointer-events: none !important; }
-    #asset-loading { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center; box-sizing: border-box; padding: 24px; background: radial-gradient(ellipse at 50% 38%, #f3fbff, #d9edfa 65%, #b8d7ec); color: #254966; font-family: system-ui, sans-serif; text-align: center; -webkit-user-select: none; user-select: none; }
+    #asset-loading { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center; box-sizing: border-box; padding: 24px; background: radial-gradient(ellipse at 50% 38%, #fffbed, #e4eddf 65%, #bfd7ce); color: #234d45; font-family: system-ui, sans-serif; text-align: center; -webkit-user-select: none; user-select: none; }
     #asset-loading[hidden], #asset-loading [hidden] { display: none !important; }
-    .asset-loading-card { width: min(340px, 100%); }
-    .asset-loading-mark { width: 78px; height: 86px; margin: 0 auto 18px; filter: drop-shadow(0 8px 6px #36617c24); animation: asset-loading-float 1.8s ease-in-out infinite; }
-    .asset-loading-brand { margin: 0; font-size: 11px; font-weight: 800; letter-spacing: .24em; }
-    .asset-loading-brand strong { display: block; margin-top: 3px; font-size: 29px; letter-spacing: -.04em; }
-    #asset-loading-status { margin: 24px 0 15px; font-size: 14px; line-height: 1.5; color: #52728b; }
-    #asset-loading-progress { height: 9px; border-radius: 9px; overflow: hidden; background: #b6d5e8; box-shadow: inset 0 1px 2px #42668320; }
-    #asset-loading-progress span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #0879c6, #16b5f4); transition: width .18s ease; }
-    #asset-loading-percent { display: block; margin-top: 10px; color: #52728b; font-size: 12px; font-weight: 700; }
-    #asset-loading-retry { margin-top: 12px; padding: 12px 22px; border: 0; border-radius: 9px; background: #078ee9; color: white; cursor: pointer; font: 700 14px system-ui, sans-serif; }
+    .asset-loading-card { width: min(420px, 100%); }
+    .asset-loading-logo { display: block; width: 100%; height: auto; aspect-ratio: 2160 / 728; margin: 0 auto 25px; }
+    #asset-loading-status { margin: 0 0 15px; font-size: 14px; line-height: 1.5; color: #547266; }
+    #asset-loading-progress { height: 9px; border-radius: 9px; overflow: hidden; background: #bfd1bf; box-shadow: inset 0 1px 2px #234d4520; }
+    #asset-loading-progress span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #d5a137, #ffdb77); transition: width .18s ease; }
+    #asset-loading-percent { display: block; margin-top: 10px; color: #547266; font-size: 12px; font-weight: 700; }
+    #asset-loading-retry { margin-top: 12px; padding: 12px 22px; border: 0; border-radius: 9px; background: #e8b43f; color: #234d45; cursor: pointer; font: 700 14px system-ui, sans-serif; }
     #asset-loading-retry:focus-visible { outline: 3px solid #d69d36; outline-offset: 4px; }
-    @keyframes asset-loading-float { 50% { transform: translateY(-7px); } }
-    @media (prefers-reduced-motion: reduce) { .asset-loading-mark { animation: none; } #asset-loading-progress span { transition: none; } }
-    @media (max-height: 400px) { .asset-loading-mark { width: 48px; height: 52px; margin-bottom: 8px; } #asset-loading-status { margin-top: 14px; } .asset-loading-brand strong { font-size: 24px; } }
+    @media (prefers-reduced-motion: reduce) { #asset-loading-progress span { transition: none; } }
+    @media (max-height: 400px) { .asset-loading-card { width: min(330px, 100%); } .asset-loading-logo { margin-bottom: 16px; } }
   </style>
   <script>
     window.addEventListener('error', function (event) {
@@ -45,9 +42,10 @@
     document.addEventListener('click', function (event) { if (event.target.id === 'asset-loading-retry') location.reload(); });
   </script>
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="apple-touch-icon" href="assets/app/icon-192.e573394d9545.png">
-  <title>Road Business</title>
-  <link rel="icon" href="data:,">
+  <link rel="apple-touch-icon" href="assets/app/icon-192.8b2f9c79cd4e.png">
+  <title>CAPITALIST</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/app/favicon-32.1e442f9d3bf6.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/app/favicon-16.9b7c124f1c28.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
@@ -64,14 +62,14 @@
 
 
 
-  <link rel="stylesheet" href="runtime/game.0d60df461ef6.min.css">
+
+  <link rel="stylesheet" href="runtime/game.bebddb3c1ca4.min.css">
 </head>
 <body data-scene="menu">
   <section id="asset-loading" aria-label="Carregamento do jogo" aria-busy="true">
     <div class="asset-loading-card">
-      <svg class="asset-loading-mark" viewBox="0 0 78 86" aria-hidden="true"><path d="m39 2 35 20v42L39 84 4 64V22Z" fill="#078ee9"/><path d="m39 2 35 20-35 20L4 22Z" fill="#62d2ff"/><path d="m39 42 35-20v42L39 84Z" fill="#086fba"/><path d="m39 2 35 20v42L39 84 4 64V22Z" fill="none" stroke="#ffffff" stroke-opacity=".65" stroke-width="2"/><path d="m4 22 35 20 35-20M39 42v42" fill="none" stroke="#ffffff" stroke-opacity=".35" stroke-width="2"/></svg>
-      <p class="asset-loading-brand">ROAD<strong>BUSINESS</strong></p>
-      <p id="asset-loading-status" role="status" aria-live="polite">Preparando sua mesa…</p>
+      <img class="asset-loading-logo" src="assets/branding/capitalist-logo-v1.37c1331f5ab8.webp" alt="CAPITALIST" width="2160" height="728" fetchpriority="high">
+      <p id="asset-loading-status" role="status" aria-live="polite">Preparando sua cidade…</p>
       <div id="asset-loading-progress" role="progressbar" aria-label="Carregamento dos elementos do jogo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
       <output id="asset-loading-percent" aria-hidden="true">0%</output>
       <button id="asset-loading-retry" type="button" hidden>Tentar novamente</button>
@@ -83,24 +81,24 @@
       <h1 id="viewport-title">Jogue na horizontal</h1>
       <p id="viewport-message">Gire seu dispositivo e entre em tela cheia para começar.</p>
       <button id="viewport-enter" class="btn primary" type="button">Entrar em tela cheia</button>
-      <p id="viewport-install" hidden>No navegador, abra Compartilhar ou o menu e escolha Adicionar à Tela de Início. Depois abra Road Business pelo ícone e gire o dispositivo.</p>
+      <p id="viewport-install" hidden>No navegador, abra Compartilhar ou o menu e escolha Adicionar à Tela de Início. Depois abra CAPITALIST pelo ícone e gire o dispositivo.</p>
       <section id="viewport-ios-install" class="viewport-install-guide" aria-labelledby="viewport-ios-title" hidden>
         <h2 id="viewport-ios-title">Como jogar no iPhone ou iPad</h2>
         <ol>
           <li>Abra este site no <strong>Safari</strong>.</li>
           <li>Toque em <strong>Compartilhar</strong> (quadrado com seta para cima) e escolha <strong>Adicionar à Tela de Início</strong>.</li>
           <li>Se aparecer, mantenha <strong>Abrir como App</strong> ativado e toque em <strong>Adicionar</strong>.</li>
-          <li>Abra <strong>Road Business pelo novo ícone</strong> e gire o aparelho para a horizontal.</li>
+          <li>Abra <strong>CAPITALIST pelo novo ícone</strong> e gire o aparelho para a horizontal.</li>
         </ol>
       </section>
     </div>
   </section>
   <div class="menu-backdrop" aria-hidden="true"></div>
   <header class="game-header">
-    <a class="game-brand" href="#" aria-label="Road Business, início"><span class="hud-icon icon-gem" aria-hidden="true"></span><span>ROAD<strong>BUSINESS</strong></span></a>
+    <a class="game-brand" href="#" aria-label="CAPITALIST, início"><img class="game-brand-logo" src="assets/branding/capitalist-logo-v1.37c1331f5ab8.webp" alt="CAPITALIST" width="2160" height="728"></a>
     <div class="table-label"><span class="live-dot"></span><span id="table-mode">SEU PRÓXIMO DESTINO</span><small>Mesa clássica · Volta ao mundo</small></div>
     <nav class="header-actions" aria-label="Menu do jogo">
-      <a id="support-game" class="ui-icon-button support-link support-game" href="https://buymeacoffee.com/ojesus" target="_blank" rel="noopener noreferrer" aria-label="Apoie o projeto no Buy Me a Coffee (abre em outra aba)"><span class="support-coffee-icon" aria-hidden="true"></span></a>
+      <a id="support-game" class="ui-icon-button support-link support-game" href="https://buymeacoffee.com/ojesus" target="_blank" rel="noopener noreferrer" title="me pague um café" aria-label="me pague um café no Buy Me a Coffee (abre em outra aba)"><span class="support-coffee-icon" aria-hidden="true"></span></a>
       <button id="fullscreen-toggle" class="ui-icon-button" type="button" aria-label="Entrar em tela cheia"><span aria-hidden="true">⛶</span></button>
       <button id="profile-toggle" class="ui-icon-button" type="button" aria-label="Personalizar personagem" aria-controls="player-profile" aria-expanded="false" hidden><span class="hud-icon icon-gem" aria-hidden="true"></span></button>
       <button id="how-to-play" class="ui-icon-button" type="button" aria-label="Como jogar"><span class="hud-icon icon-book" aria-hidden="true"></span></button>
@@ -177,7 +175,7 @@
           <button class="btn primary" type="submit">Entrar em Sala</button>
         </div>
       </form>
-      <a id="support-menu" class="support-link support-menu" href="https://buymeacoffee.com/ojesus" target="_blank" rel="noopener noreferrer" aria-label="Apoie o projeto no Buy Me a Coffee (abre em outra aba)"><span class="support-coffee-icon" aria-hidden="true"></span><span>Apoie o Projeto<small>Um café ajuda o jogo a continuar gratuito</small></span><span class="support-external" aria-hidden="true">↗</span></a>
+      <a id="support-menu" class="support-link support-menu" href="https://buymeacoffee.com/ojesus" target="_blank" rel="noopener noreferrer" title="me pague um café" aria-label="me pague um café no Buy Me a Coffee (abre em outra aba)"><span class="support-coffee-icon" aria-hidden="true"></span><span>me pague um café<small>Um café ajuda o jogo a continuar gratuito</small></span><span class="support-external" aria-hidden="true">↗</span></a>
     </div>
     <section id="waiting-room" class="waiting-room" aria-label="Escolha de personagem e sala de espera" hidden>
       <p class="waiting-intro" id="waiting-intro">Escolha seu personagem e sua cor antes de entrar no tabuleiro.</p>
@@ -248,6 +246,6 @@
 
 
 
-  <script src="runtime/game.2f14057d964e.min.js"></script>
+  <script src="runtime/game.21be96f31999.min.js"></script>
 </body>
 </html>
