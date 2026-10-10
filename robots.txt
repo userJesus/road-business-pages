@@ -1,5 +1,4 @@
-# Esta configuração só é efetiva em /robots.txt na raiz do domínio.
 User-agent: *
 Allow: /
 
-Sitemap: https://userjesus.github.io/road-business-pages/sitemap.xml
+Sitemap: https://capitalist.dev.br/sitemap.xml

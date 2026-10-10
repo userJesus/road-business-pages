@@ -1,0 +1,64 @@
+# CAPITALIST
+
+> CAPITALIST é um jogo de tabuleiro online grátis de estratégia e gestão de imóveis, com estados e praias do Brasil. Compre propriedades, construa casas e hotéis e receba aluguéis. Jogue com 2 a 4 jogadores online ou sozinho contra o BOT, sem baixar e sem cadastro.
+
+## Páginas oficiais
+
+- [Jogar CAPITALIST](https://capitalist.dev.br/jogar/): jogo no navegador.
+- [Apresentação em português](https://capitalist.dev.br/): modos, vídeo e perguntas frequentes.
+- [English overview](https://capitalist.dev.br/en/): English version of the landing page.
+- [Como jogar e regras](https://capitalist.dev.br/regras/): instruções, valores e objetivos de vitória.
+
+## Perguntas e respostas
+
+### O que é o CAPITALIST?
+
+CAPITALIST é um jogo de tabuleiro online grátis de estratégia e gestão de imóveis, com estados e praias do Brasil. Você compra propriedades, constrói casas e hotéis e recebe aluguéis. Dá para jogar com 2 a 4 jogadores online ou sozinho contra o BOT, direto no navegador.
+
+[Resposta na página](https://capitalist.dev.br/#faq-definition)
+
+### É parecido com Monopoly ou Banco Imobiliário?
+
+Sim, se você gosta de rolar dados, comprar terrenos e cobrar aluguel em jogos como Monopoly e Banco Imobiliário, vai reconhecer essa dinâmica no CAPITALIST. O jogo tem tabuleiro brasileiro, festivais, Carnaval, recompra de estados e objetivos de conquista próprios. CAPITALIST é independente e não é uma versão oficial dessas marcas.
+
+[Resposta na página](https://capitalist.dev.br/#faq-similar-games)
+
+### Como jogar CAPITALIST online com amigos?
+
+Abra o jogo, escolha Criar sala e compartilhe o código. Seus amigos acessam o mesmo site e escolhem Entrar com código. A sala aceita de 2 a 4 jogadores no total, incluindo quem a criou. Cada pessoa joga no próprio aparelho, com internet, e o anfitrião inicia a partida.
+
+[Resposta na página](https://capitalist.dev.br/#faq-friends)
+
+### O jogo é grátis, sem download e sem cadastro?
+
+Sim. Você pode jogar CAPITALIST grátis no navegador, sem baixar um aplicativo e sem criar uma conta. Os valores usados para comprar imóveis e pagar aluguéis são dinheiro fictício da partida.
+
+[Resposta na página](https://capitalist.dev.br/#faq-free)
+
+### Posso jogar sozinho contra o computador?
+
+Sim. No menu, escolha Jogar com BOT, selecione seu personagem e sua cor e inicie a partida. O BOT é o adversário controlado pelo computador: rola dados, compra imóveis e constrói pelas mesmas regras que você.
+
+[Resposta na página](https://capitalist.dev.br/#faq-bot)
+
+### Quanto tempo dura uma partida de CAPITALIST?
+
+A duração padrão é de 30 minutos. No multiplayer, quem cria a sala pode ajustar o limite entre 30 e 99 minutos antes de começar. A partida pode acabar antes se alguém confirmar um objetivo de conquista ou for o último jogador ativo após as falências.
+
+[Resposta na página](https://capitalist.dev.br/#faq-duration)
+
+### Posso jogar no celular, tablet ou computador?
+
+Sim. CAPITALIST funciona no navegador do computador, celular ou tablet. No celular e no tablet, jogue com o aparelho na horizontal; o jogo orienta a entrada em tela cheia quando disponível. No multiplayer, todos precisam estar conectados à internet.
+
+[Resposta na página](https://capitalist.dev.br/#faq-devices)
+
+### Como vencer no CAPITALIST?
+
+Você vence ao manter três grupos completos em lados diferentes, dois grupos completos no mesmo lado ou as quatro praias até cada adversário concluir uma vez normal. Também vence se for o último jogador ativo. Se o tempo acabar, ganha quem tiver o maior patrimônio imobiliário; o dinheiro em caixa desempata. Veja exemplos nas regras de vitória.
+
+[Resposta na página](https://capitalist.dev.br/#faq-victory)
+
+## Criador
+
+Jesus C. Oliveira: [GitHub](https://github.com/userJesus) · [LinkedIn](https://www.linkedin.com/in/ojesus/).
