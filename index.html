@@ -32,7 +32,17 @@
       function show() {
         document.documentElement.dataset.loading = 'failed';
         document.getElementById('asset-loading').setAttribute('aria-busy', 'false');
-        document.getElementById('asset-loading-status').textContent = 'Não foi possível carregar o jogo. Confira sua conexão e tente novamente.';
+        var english = document.documentElement.lang === 'en';
+        try { english = localStorage.getItem('capitalist.language.v1') === 'en'; } catch (_) {}
+        if (!window.RBI18n) {
+          document.documentElement.lang = english ? 'en' : 'pt-BR';
+          document.getElementById('asset-loading').setAttribute('aria-label', english ? 'Game loading' : 'Carregamento do jogo');
+        }
+        var message = 'Não foi possível carregar o jogo. Confira sua conexão e tente novamente.';
+        if (window.RBI18n) window.RBI18n.text(document.getElementById('asset-loading-status'), message);
+        else document.getElementById('asset-loading-status').textContent = english ? 'The game could not load. Check your connection and try again.' : message;
+        if (window.RBI18n) window.RBI18n.text(document.getElementById('asset-loading-retry'), 'Tentar novamente');
+        else document.getElementById('asset-loading-retry').textContent = english ? 'Try again' : 'Tentar novamente';
         document.getElementById('asset-loading-status').hidden = false;
         document.getElementById('asset-loading-progress').hidden = true;
         document.getElementById('asset-loading-retry').hidden = false;
@@ -63,7 +73,8 @@
 
 
 
-  <link rel="stylesheet" href="runtime/game.0c141f343b83.min.css">
+
+  <link rel="stylesheet" href="runtime/game.a18747191cfd.min.css">
 </head>
 <body data-scene="menu">
   <section id="asset-loading" aria-label="Carregamento do jogo" aria-busy="true">
@@ -97,6 +108,16 @@
     <a class="game-brand" href="#" aria-label="CAPITALIST, início"><img class="game-brand-logo" src="assets/branding/capitalist-logo-v1.37c1331f5ab8.webp" alt="CAPITALIST" width="2160" height="728"></a>
     <div class="table-label"><span class="live-dot"></span><span id="table-mode">SEU PRÓXIMO DESTINO</span><small>Mesa clássica · Volta ao mundo</small></div>
     <nav class="header-actions" aria-label="Menu do jogo">
+      <div class="language-control">
+        <button id="language-toggle" class="ui-icon-button language-toggle" type="button" aria-label="Trocar idioma" aria-controls="language-menu" aria-expanded="false"><img src="assets/hud/language-globe-v1.a32df9125a13.svg" width="32" height="32" alt="" aria-hidden="true"><span id="language-code" aria-hidden="true">PT</span></button>
+        <section id="language-menu" class="language-menu" aria-labelledby="language-title" hidden>
+          <p id="language-title">Idioma</p>
+          <div role="group" aria-label="Escolher idioma">
+            <button class="language-option" type="button" data-language="pt" aria-pressed="true"><span lang="pt-BR" data-i18n-ignore>Português</span><small aria-hidden="true">PT</small></button>
+            <button class="language-option" type="button" data-language="en" aria-pressed="false"><span lang="en" data-i18n-ignore>English</span><small aria-hidden="true">EN</small></button>
+          </div>
+        </section>
+      </div>
       <a id="support-game" class="ui-icon-button support-link support-game" href="https://buymeacoffee.com/ojesus" target="_blank" rel="noopener noreferrer" title="me pague um café" aria-label="me pague um café no Buy Me a Coffee (abre em outra aba)"><span class="support-coffee-icon" aria-hidden="true"></span></a>
       <button id="fullscreen-toggle" class="ui-icon-button" type="button" aria-label="Entrar em tela cheia"><span aria-hidden="true">⛶</span></button>
       <button id="profile-toggle" class="ui-icon-button" type="button" aria-label="Personalizar personagem" aria-controls="player-profile" aria-expanded="false" hidden><span class="hud-icon icon-gem" aria-hidden="true"></span></button>
@@ -152,6 +173,7 @@
   </main>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <span id="language-announcement" role="status" aria-live="polite"></span>
 
   <section id="multiplayer-panel" class="multiplayer-panel" aria-labelledby="multiplayer-title" data-state="HOME">
     <span class="ui-eyebrow lobby-eyebrow" id="menu-eyebrow" hidden></span>
@@ -243,6 +265,9 @@
 
 
 
-  <script src="runtime/game.58ce4003adb8.min.js"></script>
+
+
+
+  <script src="runtime/game.80845ba472d2.min.js"></script>
 </body>
 </html>
