@@ -3,6 +3,8 @@
 <head>
   <base href="../">
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-4DQBAHxJEmVycoc8iW7meY8XNI+q9xY1/qtd2hCHfrg='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' blob:; connect-src 'self' https://0.peerjs.com wss://0.peerjs.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
+  <meta name="referrer" content="no-referrer">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-visual">
   <meta name="theme-color" content="#203f3d">
   <meta name="mobile-web-app-capable" content="yes">
@@ -24,34 +26,7 @@
     @media (prefers-reduced-motion: reduce) { #asset-loading-progress span { transition: none; } }
     @media (max-height: 400px) { .asset-loading-card { width: min(330px, 100%); } .asset-loading-logo { margin-bottom: 16px; } }
   </style>
-  <script>
-    window.addEventListener('error', function (event) {
-      if (!document.documentElement.hasAttribute('data-loading')) return;
-      var target = event.target;
-      if (!event.error && !(target instanceof HTMLScriptElement) && !(target instanceof HTMLLinkElement && new URL(target.href).origin === location.origin)) return;
-      window.roadBusinessStartupFailed = true;
-      function show() {
-        document.documentElement.dataset.loading = 'failed';
-        document.getElementById('asset-loading').setAttribute('aria-busy', 'false');
-        var english = document.documentElement.lang === 'en';
-        try { english = localStorage.getItem('capitalist.language.v1') === 'en'; } catch (_) {}
-        if (!window.RBI18n) {
-          document.documentElement.lang = english ? 'en' : 'pt-BR';
-          document.getElementById('asset-loading').setAttribute('aria-label', english ? 'Game loading' : 'Carregamento do jogo');
-        }
-        var message = 'Não foi possível carregar o jogo. Confira sua conexão e tente novamente.';
-        if (window.RBI18n) window.RBI18n.text(document.getElementById('asset-loading-status'), message);
-        else document.getElementById('asset-loading-status').textContent = english ? 'The game could not load. Check your connection and try again.' : message;
-        if (window.RBI18n) window.RBI18n.text(document.getElementById('asset-loading-retry'), 'Tentar novamente');
-        else document.getElementById('asset-loading-retry').textContent = english ? 'Try again' : 'Tentar novamente';
-        document.getElementById('asset-loading-status').hidden = false;
-        document.getElementById('asset-loading-progress').hidden = true;
-        document.getElementById('asset-loading-retry').hidden = false;
-      }
-      if (document.getElementById('asset-loading')) show(); else document.addEventListener('DOMContentLoaded', show, { once: true });
-    }, true);
-    document.addEventListener('click', function (event) { if (event.target.id === 'asset-loading-retry') location.reload(); });
-  </script>
+  <script>window.addEventListener("error",function(t){if(!document.documentElement.hasAttribute("data-loading"))return;var n=t.target;if(!t.error&&!(n instanceof HTMLScriptElement)&&!(n instanceof HTMLLinkElement&&new URL(n.href).origin===location.origin))return;window.roadBusinessStartupFailed=!0;function a(){document.documentElement.dataset.loading="failed",document.getElementById("asset-loading").setAttribute("aria-busy","false");var e=document.documentElement.lang==="en";try{e=localStorage.getItem("capitalist.language.v1")==="en"}catch{}window.RBI18n||(document.documentElement.lang=e?"en":"pt-BR",document.getElementById("asset-loading").setAttribute("aria-label",e?"Game loading":"Carregamento do jogo"));var o="Não foi possível carregar o jogo. Confira sua conexão e tente novamente.";window.RBI18n?window.RBI18n.text(document.getElementById("asset-loading-status"),o):document.getElementById("asset-loading-status").textContent=e?"The game could not load. Check your connection and try again.":o,window.RBI18n?window.RBI18n.text(document.getElementById("asset-loading-retry"),"Tentar novamente"):document.getElementById("asset-loading-retry").textContent=e?"Try again":"Tentar novamente",document.getElementById("asset-loading-status").hidden=!1,document.getElementById("asset-loading-progress").hidden=!0,document.getElementById("asset-loading-retry").hidden=!1}document.getElementById("asset-loading")?a():document.addEventListener("DOMContentLoaded",a,{once:!0})},!0),document.addEventListener("click",function(t){t.target.id==="asset-loading-retry"&&location.reload()});</script>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="assets/app/icon-192.8b2f9c79cd4e.png">
   <title>Jogar CAPITALIST — Tabuleiro online</title>
@@ -60,9 +35,6 @@
   <link rel="canonical" href="https://capitalist.dev.br/jogar/">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/app/favicon-32.1e442f9d3bf6.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/app/favicon-16.9b7c124f1c28.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
 
 
 
@@ -78,7 +50,8 @@
 
 
 
-  <link rel="stylesheet" href="runtime/game.f6d48ea2edf8.min.css">
+
+  <link rel="stylesheet" href="runtime/game.97fcad3dd9e9.min.css">
 </head>
 <body data-scene="menu">
   <section id="asset-loading" aria-label="Carregamento do jogo" aria-busy="true">
@@ -272,6 +245,6 @@
 
 
 
-  <script src="runtime/game.ef29aafa61fb.min.js"></script>
+  <script src="runtime/game.1985861bb955.min.js"></script>
 </body>
 </html>
